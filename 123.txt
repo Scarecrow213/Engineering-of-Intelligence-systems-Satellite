@@ -1,0 +1,15 @@
+products = api.query(footprint = "\"Intersects(POLYGON((12.321776 41.715650, 12.407166589037937 41.7827665712758, 12.43462486294072 41.76871016642381, 12.450448275260044 41.681700252194204, 12.416939873209188 41.65753889815215, 12.321776 41.715650)))\"",
+                     date = ('20190601', '20190626'),
+                     platformname = 'Sentinel-2',
+                     processinglevel = 'Level-2A',
+                     cloudcoverpercentage = (0,10))
+
+!wget https://www.dropbox.com/s/ymxuxpcnj88mlz2/NReserve.zip
+!unzip 'NReserve.zip'
+nReserve = gpd.read_file('NReserve/NaturalReserve_Polygon.shp')
+nReserve
+!unzip S2B_MSIL2A_20190605T100039_N0212_R122_T33TTG_20190605T143319.zip
+#Убрал --quite
+
+# b4 = rio.open(R10+'/T33TTG_20190605T100039_B04_10m.jp2')
+# b8 = rio.open(R10+'/T33TTG_20190605T100039_B08_10m.jp2')
